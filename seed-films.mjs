@@ -1,15 +1,12 @@
 import { drizzle } from "drizzle-orm/mysql2";
 import { films, streamingPlatforms } from "./drizzle/schema.js";
-
+Show less
 const DATABASE_URL = process.env.DATABASE_URL;
-
 if (!DATABASE_URL) {
   console.error("DATABASE_URL not set");
   process.exit(1);
 }
-
 const db = drizzle(DATABASE_URL);
-
 const platformsData = [
   { name: "Tubi", slug: "tubi", color: "#FF0000" },
   { name: "HBO Max", slug: "hbo-max", color: "#9E1B32" },
@@ -23,7 +20,6 @@ const platformsData = [
   { name: "MGM+", slug: "mgm-plus", color: "#FFA500" },
   { name: "Starz", slug: "starz", color: "#000000" },
 ];
-
 const filmsData = [
   {
     title: "Under the Silver Lake",
@@ -34,7 +30,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt5691994/",
     imdbRating: "6.8/10",
     rottenTomatoesScore: "52%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BZTM2NTk0YjUtODVlYS00NWE1LWI0ZTItZjA5NjA3YjA3OTg4XkEyXkFqcGdeQXVyNTI4MjkwMjM@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/cJ9aKlEgTLYtpYjNqin06YqJRUl.jpg",
     directors: JSON.stringify(["David Robert Mitchell"]),
     cast: JSON.stringify(["Andrew Garfield", "Callie Hernandez", "Matthew Gray Gubler"]),
     runtime: 139,
@@ -48,7 +44,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt1791528/",
     imdbRating: "7.0/10",
     rottenTomatoesScore: "75%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjAzMTk3MzEtOTQyZi00YjU1LWJlOTAtMzA5YmE3ZDI5ZTk5XkEyXkFqcGdeQXVyNTI4MjkwMjM@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/hyan5Uc0lGpPuad94DM1pLxneiP.jpg",
     directors: JSON.stringify(["Paul Thomas Anderson"]),
     cast: JSON.stringify(["Joaquin Phoenix", "Josh Brolin", "Katherine Waterston"]),
     runtime: 148,
@@ -62,7 +58,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0166924/",
     imdbRating: "8.0/10",
     rottenTomatoesScore: "87%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BYTZkNjQ1ZDEtODEzMy00NTk0LWI3YTAtMTI2ZTZmNDk1YTBjXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/tVxGt7uffLVhIIcwuldXOMpFBPX.jpg",
     directors: JSON.stringify(["David Lynch"]),
     cast: JSON.stringify(["Naomi Watts", "Laura Elena Harring", "Justin Theroux"]),
     runtime: 147,
@@ -76,7 +72,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0369339/",
     imdbRating: "7.5/10",
     rottenTomatoesScore: "87%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQzNDc1OTkwMV5BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/nV5316WUsVij8sVXLCF1g7TFitg.jpg",
     directors: JSON.stringify(["Michael Mann"]),
     cast: JSON.stringify(["Tom Cruise", "Jamie Foxx", "Jada Pinkett Smith"]),
     runtime: 120,
@@ -90,7 +86,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0119506/",
     imdbRating: "8.2/10",
     rottenTomatoesScore: "90%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMTQ0MzQ3Njc0Nl5BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/lWCgf5sD5FpMljjpkRhcC8pXcch.jpg",
     directors: JSON.stringify(["Curtis Hanson"]),
     cast: JSON.stringify(["Russell Crowe", "Guy Pearce", "Kim Basinger"]),
     runtime: 138,
@@ -104,7 +100,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0083658/",
     imdbRating: "8.1/10",
     rottenTomatoesScore: "89%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMTA0MjUwODAwMzNeQTJeQWpwZ15BbWU4MDc1MTI1MzAx._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg",
     directors: JSON.stringify(["Ridley Scott"]),
     cast: JSON.stringify(["Harrison Ford", "Rutger Hauer", "Sean Young"]),
     runtime: 117,
@@ -118,7 +114,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0393109/",
     imdbRating: "7.4/10",
     rottenTomatoesScore: "81%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMTk1OTI0NzU0Nl5BMl5BanBnXkFtZTcwMDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/5WVk8JpNIxepn4fpZzQeCumkOL5.jpg",
     directors: JSON.stringify(["Rian Johnson"]),
     cast: JSON.stringify(["Joseph Gordon-Levitt", "Nora Zehetner", "Lukas Haas"]),
     runtime: 110,
@@ -132,7 +128,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0110912/",
     imdbRating: "8.9/10",
     rottenTomatoesScore: "92%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMTkxMzk2MjQ3NV5BMl5BanBnXkFtZTgwNzk0NTQ5MTE@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
     directors: JSON.stringify(["Quentin Tarantino"]),
     cast: JSON.stringify(["John Travolta", "Samuel L. Jackson", "Uma Thurman"]),
     runtime: 154,
@@ -146,7 +142,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0120669/",
     imdbRating: "7.7/10",
     rottenTomatoesScore: "68%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BNzk3MzY1NzA4Nl5BMl5BanBnXkFtZTcwMDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/tisNLcMkxryU2zxhi0PiyDFqhm0.jpg",
     directors: JSON.stringify(["Terry Gilliam"]),
     cast: JSON.stringify(["Johnny Depp", "Benicio Del Toro", "Tobey Maguire"]),
     runtime: 118,
@@ -160,7 +156,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt1723121/",
     imdbRating: "7.6/10",
     rottenTomatoesScore: "85%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BOTg4ZDI5MzEtYjZjYS00ZWE3LWJkN2ItYTZlYWZlYzc2ZjU5XkEyXkFqcGdeQXVyNjg2NjUwMDQ@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg",
     directors: JSON.stringify(["Quentin Tarantino"]),
     cast: JSON.stringify(["Leonardo DiCaprio", "Brad Pitt", "Margot Robbie"]),
     runtime: 161,
@@ -174,7 +170,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0118715/",
     imdbRating: "8.1/10",
     rottenTomatoesScore: "80%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BYTRiNjk1MzYtMzVmYS00YjZhLWJlN2YtYzhjMTEzMDFmODVmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/9mprbw31MGdd66LR0AQKoDMoFRv.jpg",
     directors: JSON.stringify(["Joel Coen", "Ethan Coen"]),
     cast: JSON.stringify(["Jeff Bridges", "John Goodman", "Julianne Moore"]),
     runtime: 117,
@@ -188,7 +184,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0780504/",
     imdbRating: "7.8/10",
     rottenTomatoesScore: "93%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BZjY2OTA0MzItMzA0YS00OTMwLWI1ZTAtMzg5MzY2MGExOTAyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/602vevIURmpDfzbnv5Ubi6wIkQm.jpg",
     directors: JSON.stringify(["Nicolas Winding Refn"]),
     cast: JSON.stringify(["Ryan Gosling", "Carey Mulligan", "Bryan Cranston"]),
     runtime: 100,
@@ -202,7 +198,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt2872718/",
     imdbRating: "7.9/10",
     rottenTomatoesScore: "96%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA2NjU5NzEyM15BMl5BanBnXkFtZTgwOTg0MjI4MzE@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/j9HrX8f7GbZQm1BrBiR40uFQZSb.jpg",
     directors: JSON.stringify(["Dan Gilroy"]),
     cast: JSON.stringify(["Jake Gyllenhaal", "Rene Russo", "Riz Ahmed"]),
     runtime: 117,
@@ -216,7 +212,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0115964/",
     imdbRating: "6.3/10",
     rottenTomatoesScore: "39%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMzQzNzA0OTk4Nl5BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/gpai5oUFyFGLHOCsYTvVMqlbY7A.jpg",
     directors: JSON.stringify(["David Cronenberg"]),
     cast: JSON.stringify(["James Spader", "Debbie Unger", "Elias Koteas"]),
     runtime: 100,
@@ -230,7 +226,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0283003/",
     imdbRating: "6.5/10",
     rottenTomatoesScore: "42%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA0NjI5NTcyN15BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/jiwNobUsd29ooowQyTeh0cvPBFL.jpg",
     directors: JSON.stringify(["Jonas Akerlund"]),
     cast: JSON.stringify(["Jason Schwartzman", "Brittany Murphy", "Mickey Rourke"]),
     runtime: 111,
@@ -244,7 +240,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0405336/",
     imdbRating: "5.5/10",
     rottenTomatoesScore: "29%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA4NjI0MjcyN15BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/thGIvfayC2aIS6V8je6w0DmJn4z.jpg",
     directors: JSON.stringify(["Richard Kelly"]),
     cast: JSON.stringify(["Dwayne Johnson", "Seann William Scott", "Sarah Michelle Gellar"]),
     runtime: 144,
@@ -258,7 +254,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0560009/",
     imdbRating: "6.6/10",
     rottenTomatoesScore: "54%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA4NjI0MjcyN15BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/csXyZ1BsDBlH0PXkOFWxggEf9WF.jpg",
     directors: JSON.stringify(["David Ayer"]),
     cast: JSON.stringify(["Keanu Reeves", "Forest Whitaker", "Hugh Laurie"]),
     runtime: 109,
@@ -272,7 +268,7 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0139654/",
     imdbRating: "7.4/10",
     rottenTomatoesScore: "76%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA4NjI0MjcyN15BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/bUeiwBQdupBLQthMCHKV7zv56uv.jpg",
     directors: JSON.stringify(["Antoine Fuqua"]),
     cast: JSON.stringify(["Denzel Washington", "Ethan Hawke", "Scott Glenn"]),
     runtime: 122,
@@ -286,27 +282,23 @@ const filmsData = [
     imdbUrl: "https://www.imdb.com/title/tt0113118/",
     imdbRating: "7.3/10",
     rottenTomatoesScore: "76%",
-    posterUrl: "https://m.media-amazon.com/images/M/MV5BMjA4NjI0MjcyN15BMl5BanBnXkFtZTcwNDI1OTUzMQ@@._V1_.jpg",
+    posterUrl: "https://image.tmdb.org/t/p/w500/2lReF53F8trkC68piGSfk0JVwWU.jpg",
     directors: JSON.stringify(["F. Gary Gray"]),
     cast: JSON.stringify(["Ice Cube", "Chris Tucker", "Nia Long"]),
     runtime: 91,
   },
 ];
-
 async function seed() {
   try {
     console.log("Starting database seed...");
-
     console.log("Inserting streaming platforms...");
     for (const platform of platformsData) {
       await db.insert(streamingPlatforms).values(platform).catch(() => {});
     }
-
     console.log("Inserting films...");
     for (const film of filmsData) {
       await db.insert(films).values(film).catch(() => {});
     }
-
     console.log("Seed completed successfully!");
     process.exit(0);
   } catch (error) {
@@ -314,5 +306,4 @@ async function seed() {
     process.exit(1);
   }
 }
-
 seed();
